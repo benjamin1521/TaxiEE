@@ -28,19 +28,41 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/app/${user.role}">
                         <fmt:message key="text.profile"/></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="${pageContext.request.contextPath}/app/${user.role}/reports?page=1">
-                        <fmt:message key="text.myreports"/></a>
-                </li>
+                <c:if test="${user.role == 'Client'}">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="${pageContext.request.contextPath}/app/${user.role}/orders?page=1">
+                            <fmt:message key="text.myorders"/></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="${pageContext.request.contextPath}/app/${user.role}/create">
+                            <fmt:message key="text.create"/></a>
+                    </li>
+                </c:if>
+
+                <c:if test="${user.role == 'Admin'}">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="${pageContext.request.contextPath}/app/${user.role}/users">
+                            <fmt:message key="text.users"/></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="${pageContext.request.contextPath}/app/${user.role}/create">
+                            <fmt:message key="text.create"/></a>
+                    </li>
+                </c:if>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/app/${user.role}"><c:out value="${userName}"/></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/app/${user.role}"><c:out
+                            value="${userName}"/></a>
                 </li>
                 <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0">
-                        <button class="btn" type="submit" name="command" value="logout"><fmt:message key="text.logout"/></button>
+                        <button class="btn" type="submit" name="command" value="logout"><fmt:message
+                                key="text.logout"/></button>
                     </form>
                 </li>
             </ul>

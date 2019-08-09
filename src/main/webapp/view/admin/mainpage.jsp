@@ -10,7 +10,6 @@
             <p><div class="label d-inline"><fmt:message key="text.username"/>:</div> <h6 class="d-inline"><c:out value="${user.username}"/></h6></p>
             <p><div class="label d-inline"><fmt:message key="text.fullname.ua"/>:</div> <h6 class="d-inline"><c:out value="${user.fullNameUa}"/><br></h6></p>
             <p><div class="label d-inline"><fmt:message key="text.fullname.en"/>:</div> <h6 class="d-inline"><c:out value="${user.fullNameEn}"/></h6></p>
-            <p><div class="label d-inline"><fmt:message key="text.moneySpent"/>:</div> <h6 class="d-inline"><c:out value="${user.moneySpent}"/></h6></p>
         </div>
     </div>
 </div>
